@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
-            BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
+            BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.today)),
             BottomNavigationBarItem(label: 'To Do', icon: Icon(Icons.task)),
             BottomNavigationBarItem(
                 label: 'Translate', icon: Icon(Icons.translate))
