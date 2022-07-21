@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'findresources.dart';
+
+void goTofindresources(BuildContext context) {
+  Navigator.push(context, MaterialPageRoute(builder: (context) {
+    return FindResources();
+  }));
+}
 
 void main() {
   runApp(const MyApp());
@@ -27,18 +34,6 @@ class MyApp extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: const Text('Find What You Need:'),
             ),
-            //Card(
-            //child: GridView(
-            //gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //crossAxisCount: 2),
-            //children: const <Widget>[
-            // FlutterLogo(),
-            // FlutterLogo(),
-            // FlutterLogo(),
-            // FlutterLogo(),
-            //],
-            //),
-            //),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
