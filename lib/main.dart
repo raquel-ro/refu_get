@@ -7,39 +7,29 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+
+  
   @override
   Widget build(BuildContext context) {
+    const List<String> options = ["Option 1","Option 2","Option 3","Option 3","Option 3","Option 3"];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Refu-Get'),
         ),
-        body: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(10.0),
-              alignment: Alignment.topLeft,
-              child:
-                  ElevatedButton(onPressed: () {}, child: const Text('Back')),
-            ),
-            Container(
-              margin: const EdgeInsets.all(20.0),
-              alignment: Alignment.topCenter,
-              child: const Text('Find What You Need:'),
-            ),
-            //Card(
-            //child: GridView(
-            //gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //crossAxisCount: 2),
-            //children: const <Widget>[
-            // FlutterLogo(),
-            // FlutterLogo(),
-            // FlutterLogo(),
-            // FlutterLogo(),
-            //],
-            //),
-            //),
-          ],
+        body: GridView.count(
+          // Create a grid with 2 columns. If you change the scrollDirection to
+          // horizontal, this produces 2 rows.
+          crossAxisCount: 2,
+          // Generate 100 widgets that display their index in the List.
+          children: List.generate(options.length, (index) {
+            return Center(
+              child: Text(
+                '${options[index]}',
+                style: Theme.of(context).textTheme.headline5,
+              ),
+            );
+          }),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
