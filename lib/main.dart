@@ -7,11 +7,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-
-  
   @override
   Widget build(BuildContext context) {
-    const List<String> options = ["Option 1","Option 2","Option 3","Option 3","Option 3","Option 3"];
+    const List<String> options = [
+      "Clinics/Hospitals",
+      "Grocery Stores",
+      "Schools",
+      "Translation Services",
+      "Restaurants",
+      "Daycare/Preschool",
+      "Religious Places",
+      "Clothing Stores",
+      "Police/Fire Stations"
+    ];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
