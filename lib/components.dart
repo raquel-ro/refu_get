@@ -4,13 +4,13 @@ import 'main.dart';
 
 class Body extends StatelessWidget {
   const ProfilePic({
-    Key key,
+    required Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox[
-          height:115, 
+    return ProfilePic[
+          height: 115, 
           width: 115,
           child: Stack(
             fit: StackFit.expand,
@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
           ),
           ),
           ),
-        ],
+        ];
     );
     ];
   }

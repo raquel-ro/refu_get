@@ -1,4 +1,5 @@
 import 'drawer.dart';
+import 'profilepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,6 +24,7 @@ Widget build(BuildContext context) {
     theme: ThemeData(
       primarySwatch: Colors.blue,
     ),
+    initialRoute: ProfileScreen.routeName,
     home: MyHomePage(title: 'Refu-get Home Page'),
     );
   }
@@ -38,9 +40,12 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text('Refu-Get'),
         ),
-        body: Center(
-          child: Column(
-            children: [
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                //Text('Screen ${this.widget?.title ?? 1');
               Container(
                 margin: const EdgeInsets.all(10.0),
                 alignment: Alignment.topLeft,
@@ -53,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text('Find What You Need:'),
               ),
             ],
+          ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             //type:BottomNavigationBarType.fixed,
