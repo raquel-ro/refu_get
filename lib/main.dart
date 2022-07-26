@@ -1,9 +1,17 @@
-import 'dart:html';
 import 'drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const _MyHomePageState());
+  runApp(MyApp());
+}
+
+class MyHomePage extends StatefulWidget {
+    MyHomePage({Key? key, required this.title}) : super(key: key);
+
+    final String title;
+    //final int number;
+    @override
+    _MyHomePageState createState() => _MyHomePageState();
 }
 
 class MyApp extends StatelessWidget {
@@ -14,24 +22,14 @@ Widget build(BuildContext context) {
     title: 'Refu-get',
     theme: ThemeData(
       primarySwatch: Colors.blue,
-    )
+    ),
     home: MyHomePage(title: 'Refu-get Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-    MyHomePage({Key? key, required this.title}) : super(key: key);
-
-    final String title;
-    //final int number;
-    @override
-    _MyHomePageState createState() => _MyHomePageState();
-
-}
-
-class _MyHomePageState extends StatelessWidget {
-  const _MyHomePageState({Key? key}) : super(key: key);
+class _MyHomePageState extends State<MyHomePage> {
+  //const _MyHomePageState({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -54,30 +52,20 @@ class _MyHomePageState extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: const Text('Find What You Need:'),
               ),
-            //Card(
-            //child: GridView(
-            //gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            //crossAxisCount: 2),
-            //children: const <Widget>[
-            // FlutterLogo(),
-            // FlutterLogo(),
-            // FlutterLogo(),
-            // FlutterLogo(),
-            //],
-            //),
-            //),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
-           items: const [
+            //type:BottomNavigationBarType.fixed,
+            items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: 'To Do', icon: Icon(Icons.task)),
+            BottomNavigationBarItem(label: 'Favorites', icon: Icon(Icons.favorite)),
             BottomNavigationBarItem(
-                label: 'Translate', icon: Icon(Icons.translate))
-          ],
+                label: 'Translate', icon: Icon(Icons.translate)),
+              ],
         ),
-      ),
-      drawer: CustomDrawer(),
+        ),
+      drawer: CustomDrawer(title: "test"),
+    )
     );
 
   }
