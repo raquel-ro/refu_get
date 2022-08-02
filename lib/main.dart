@@ -1,3 +1,5 @@
+import 'drawer.dart';
+import 'profilepage.dart';
 import 'package:flutter/material.dart';
 import 'findresources.dart';
 
@@ -8,11 +10,36 @@ void goTofindresources(BuildContext context) {
 }
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
+}
+
+class MyHomePage extends StatefulWidget {
+    MyHomePage({Key? key, required this.title}) : super(key: key);
+
+    final String title;
+    //final int number;
+    @override
+    _MyHomePageState createState() => _MyHomePageState();
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+//this is the root of the application.
+@override
+Widget build(BuildContext context) {
+  return MaterialApp(
+    title: 'Refu-get',
+    theme: ThemeData(
+      primarySwatch: Colors.blue,
+    ),
+    initialRoute: ProfileScreen.routeName,
+    home: MyHomePage(title: 'Refu-get Home Page'),
+    );
+  }
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  //const _MyHomePageState({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +48,16 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Refu-Get'),
         ),
-        body: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.all(10.0),
-              alignment: Alignment.topLeft,
-              child:
+        body: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                //Text('Screen ${this.widget?.title ?? 1');
+              Container(
+                margin: const EdgeInsets.all(10.0),
+                alignment: Alignment.topLeft,
+                child:
                   ElevatedButton(onPressed: () {}, child: const Text('Back')),
             ),
             Container(
@@ -41,10 +72,13 @@ class MyApp extends StatelessWidget {
             BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.today)),
             BottomNavigationBarItem(label: 'To Do', icon: Icon(Icons.task)),
             BottomNavigationBarItem(
-                label: 'Translate', icon: Icon(Icons.translate))
-          ],
+                label: 'Translate', icon: Icon(Icons.translate)),
+              ],
         ),
-      ),
+        ),
+      drawer: CustomDrawer(title: "test"),
+    )
     );
+
   }
 }
