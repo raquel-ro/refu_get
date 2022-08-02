@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text('Find What You Need:'),
             ),
           ],
-        ),
+        ))),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.today)),
@@ -75,10 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 label: 'Translate', icon: Icon(Icons.translate)),
               ],
         ),
-        ),
       drawer: CustomDrawer(title: "test"),
-    )
-    );
-
-  }
-}
+    ));
+  }}
