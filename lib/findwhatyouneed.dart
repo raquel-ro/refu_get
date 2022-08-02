@@ -1,30 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/findresources.dart';
-import 'dart:async';
+import 'findresources.dart';
 
-import 'package:myfirstapp/welcomepage.dart';
+class FindWhatYouNeed extends StatelessWidget {
+  const FindWhatYouNeed({
+    Key? key,
+  }) : super(key: key);
 
-//import 'package:myfirstapp/welcomepage.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(home: new Welcomepage());
-  }
-}
-
-class Resources extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: const Text('Find What You Need')),
         body: new GridView.count(
-          crossAxisCount: 2,
+          crossAxisCount: 3,
           children: <Widget>[
             IconButton(
               onPressed: () {
@@ -39,7 +27,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/hospital.jpeg",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -48,7 +36,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Clinic/Hopsital",
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -68,7 +56,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/groceries.png",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -77,7 +65,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Grocery Stores",
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -97,7 +85,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/school.jpeg",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -106,7 +94,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Schools",
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -126,16 +114,16 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/translationservices.jpeg",
-                        height: 140.0,
+                        height: 77.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
                       new SizedBox(
-                        height: 5.0,
+                        height: 7.0,
                       ),
                       new Text(
                         "Translation Services",
-                        style: TextStyle(fontSize: 16, color: Colors.black87),
+                        style: TextStyle(fontSize: 11.5, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -155,7 +143,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/restaurants.jpeg",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -164,7 +152,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Restaurants",
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -184,16 +172,16 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/daycarePs.jpeg",
-                        height: 140.0,
+                        height: 77.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
                       new SizedBox(
-                        height: 5.0,
+                        height: 7.0,
                       ),
                       new Text(
                         "Daycare/Preschool",
-                        style: TextStyle(fontSize: 18.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 11.5, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -213,7 +201,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/religiousPlaces.jpeg",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -222,7 +210,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Religious Places",
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -242,7 +230,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/clothing.png",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -251,7 +239,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Clothing Stores",
-                        style: TextStyle(fontSize: 20.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
@@ -271,7 +259,7 @@ class Resources extends StatelessWidget {
                     children: <Widget>[
                       new Image.asset(
                         "/Users/raquelromero/myfirstapp/assets/images/policeft.jpeg",
-                        height: 140.0,
+                        height: 85.6,
                         width: 200.0,
                         fit: BoxFit.cover,
                       ),
@@ -280,7 +268,7 @@ class Resources extends StatelessWidget {
                       ),
                       new Text(
                         "Police/Fire Stations",
-                        style: TextStyle(fontSize: 18.0, color: Colors.black87),
+                        style: TextStyle(fontSize: 16.0, color: Colors.black87),
                       ),
                     ],
                   ),
