@@ -40,7 +40,24 @@ Widget build(BuildContext context) {
 class _MyHomePageState extends State<MyHomePage> {
   //const _MyHomePageState({Key? key}) : super(key: key);
 
+  int _selectedIndex = 1;
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Home',
+    ),
+    Text(
+      'Index 1: Business',
+    ),
+    Text(
+      'Index 2: School',
+    ),
+  ];
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -48,33 +65,17 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: const Text('Refu-Get'),
         ),
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                //Text('Screen ${this.widget?.title ?? 1');
-              Container(
-                margin: const EdgeInsets.all(10.0),
-                alignment: Alignment.topLeft,
-                child:
-                  ElevatedButton(onPressed: () {}, child: const Text('Back')),
-            ),
-            Container(
-              margin: const EdgeInsets.all(20.0),
-              alignment: Alignment.topCenter,
-              child: const Text('Find What You Need:'),
-            ),
-          ],
-        ))),
+        body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.today)),
             BottomNavigationBarItem(label: 'To Do', icon: Icon(Icons.task)),
-            BottomNavigationBarItem(
-                label: 'Translate', icon: Icon(Icons.translate)),
+            BottomNavigationBarItem( label: 'Translate', icon: Icon(Icons.translate)),
               ],
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
         ),
       drawer: CustomDrawer(title: "test"),
     ));
-  }}
+  }
+}
