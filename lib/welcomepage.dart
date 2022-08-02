@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/findwhatyouneed.dart';
 import 'package:myfirstapp/main.dart';
@@ -14,10 +13,16 @@ class Welcomepage extends StatefulWidget {
 class _WelcomepageState extends State<Welcomepage> {
   @override
   void goToSecondPage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return Resources();
-    }));
+    setState(() {
+        _first = false;
+        print(_first);
+    });
+    // Navigator.push(context, MaterialPageRoute(builder: (context) {
+    //   return Resources();
+    // }));
   }
+
+  bool _first = true;
 
   void initiateTimer() {
     Timer timer = Timer(Duration(seconds: 3), goToSecondPage);
@@ -25,13 +30,14 @@ class _WelcomepageState extends State<Welcomepage> {
 
   Widget build(BuildContext context) {
     initiateTimer();
-    return new AnimatedCrossFade(
+    return AnimatedCrossFade(
         firstChild: Text(
-          'Welcome to',
-          style: TextStyle(color: Colors.blue),
+          "Welcome to",
+          style: TextStyle(color: Colors.red),
         ),
-        secondChild: Text('Refu-Get'),
-        crossFadeState: CrossFadeState.showFirst,
-        duration: const Duration(milliseconds: 200));
+        secondChild: Text("Refu-Get"),
+        duration: const Duration(seconds: 5),
+        crossFadeState: _first ? CrossFadeState.showFirst : CrossFadeState.showSecond
+        );
   }
 }
