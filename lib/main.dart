@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.today)),
-            BottomNavigationBarItem(label: 'To Do', icon: Icon(Icons.task)),
+            BottomNavigationBarItem(label: 'Favorites', icon: Icon(Icons.favorite)),
             BottomNavigationBarItem(
                 label: 'Translate', icon: Icon(Icons.translate)),
               ],
