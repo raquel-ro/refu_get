@@ -13,13 +13,13 @@ class CustomDrawer extends Drawer {
     child: Column(
       children: <Widget>[
         FlatButton(
-          child: const Text("Profile 1"),
+          child: const Text("Erica H."),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "Profile", )));
           },
         ),
       FlatButton(
-          child: Text("Profile 2"),
+          child: Text("Jack H."),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => MyHomePage(title: "Profile", )));
           },
