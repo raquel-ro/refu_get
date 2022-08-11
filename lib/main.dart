@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:myfirstapp/drawer.dart';
 import 'package:myfirstapp/findresources.dart';
 import 'dart:async';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:image_network/image_network.dart';
+import 'dart:js';
+import 'editProfilePage.dart';
+import 'user_preferences.dart';
+import 'ProfilePage.dart';
+import 'user.dart';
 
 import 'package:myfirstapp/welcomepage.dart';
 
-//import 'package:myfirstapp/welcomepage.dart';
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-void main() {
+  await UserPreferences.init;
+
   runApp(MyApp());
 }
 
@@ -291,12 +301,17 @@ class Resources extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
-            BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.home)),
-            BottomNavigationBarItem(label: 'To Do', icon: Icon(Icons.task)),
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home),
+            ),
+            BottomNavigationBarItem(
+                label: 'Favorites', icon: Icon(Icons.favorite)),
             BottomNavigationBarItem(
                 label: 'Translate', icon: Icon(Icons.translate))
           ],
         ),
+        drawer: CustomDrawer(title: "test"),
       ),
     );
   }
