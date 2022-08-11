@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:myfirstapp/findwhatyouneed.dart';
 import 'package:myfirstapp/main.dart';
 
+import 'package:animated_text_kit/animated_text_kit.dart';
+
 class Welcomepage extends StatefulWidget {
   const Welcomepage({Key? key}) : super(key: key);
 
@@ -13,25 +15,54 @@ class Welcomepage extends StatefulWidget {
 
 class _WelcomepageState extends State<Welcomepage> {
   @override
-  void goToSecondPage() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) {
-      return Resources();
-    }));
+  void initState() {
+    super.initState();
+    Timer(
+        const Duration(seconds: 5),
+        () => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (BuildContext context) => Resources())));
   }
 
-  void initiateTimer() {
-    Timer timer = Timer(Duration(seconds: 3), goToSecondPage);
-  }
+  bool _first = true;
 
+  @override
   Widget build(BuildContext context) {
-    initiateTimer();
-    return new AnimatedCrossFade(
-        firstChild: Text(
-          'Welcome to',
-          style: TextStyle(color: Colors.blue),
-        ),
-        secondChild: Text('Refu-Get'),
-        crossFadeState: CrossFadeState.showFirst,
-        duration: const Duration(milliseconds: 200));
+    //initiateTimer();
+    const colorizeColors = [
+      Colors.purple,
+      Colors.blue,
+      Colors.yellow,
+      Colors.red,
+    ];
+
+    const colorizeTextStyle = TextStyle(
+      fontSize: 64.0,
+      fontFamily: 'Horizon',
+    );
+    return Scaffold(
+        backgroundColor: Color.fromARGB(224, 233, 233, 233),
+        body: Padding(
+            padding: const EdgeInsets.only(
+              top: 300.0,
+              left: 70,
+              right: 70,
+            ),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                ColorizeAnimatedText(
+                  'Welcome to',
+                  textStyle: colorizeTextStyle,
+                  colors: colorizeColors,
+                  textAlign: TextAlign.center,
+                ),
+                ColorizeAnimatedText(
+                  '   Refu-Get',
+                  textStyle: colorizeTextStyle,
+                  colors: colorizeColors,
+                  textAlign: TextAlign.right,
+                ),
+              ],
+              isRepeatingAnimation: true,
+            )));
   }
 }

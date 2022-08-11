@@ -29,9 +29,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    #http: ^0.13.4
-  
+  flutter_map: ^2.2.0
+  latlong2: ^0.8.1
   splashscreen:
+  image_network: ^2.5.1
+  animated_text_kit: ^4.2.2
+  user_profile: ^0.1.27-nullsafety
+  shared_preferences: ^2.0.15
+  image_picker: ^0.8.0+1
+  path_provider: ^2.0.1
+  profile: ^0.0.1
+  #flutter_svg: ^0.22.0
+  
 
   #google_maps_flutter: ^2.0.1
 
